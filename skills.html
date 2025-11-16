@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-    <title>Skills - Abdur Rehman Portfolio</title>
+    <title>Services - Abdur Rehman</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap');
 
@@ -85,184 +85,116 @@
             padding: 10rem 9% 5rem;
         }
 
-        .skills{
+        .services{
             background-color: black;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
         }
 
-        .skills h2{
-            margin-bottom: 3rem;
+        .services h2{
+            margin-bottom: 5rem;
             font-size: 5rem;
             text-align: center;
         }
 
-        .skills h2 span{
+        .services h2 span{
             color: #b74b4b;
         }
 
-        .skills-subtitle{
-            font-size: 1.8rem;
-            color: #999;
-            text-align: center;
-            margin-bottom: 5rem;
-        }
-
-        .skills-grid{
+        .services-container{
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 4rem;
-            max-width: 1200px;
-            width: 100%;
+            gap: 3rem;
         }
 
-        .skill-circle-wrapper{
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 2rem;
-            padding: 3rem;
-            background: linear-gradient(145deg, #0a0a0a, #1a1a1a);
+        .service-box{
+            background-color: #161616;
+            padding: 3rem 2rem 4rem;
             border-radius: 2rem;
+            border: 2px solid transparent;
+            cursor: pointer;
             transition: 0.4s ease;
             position: relative;
             overflow: hidden;
         }
 
-        .skill-circle-wrapper::before{
+        .service-box::before{
             content: '';
             position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle, rgba(183, 75, 75, 0.1) 0%, transparent 70%);
-            opacity: 0;
-            transition: 0.5s ease;
+            top: 0;
+            left: 0;
+            width: 0;
+            height: 100%;
+            background: linear-gradient(45deg, #b74b4b, #8b3636);
+            z-index: 0;
+            transition: 0.4s ease;
         }
 
-        .skill-circle-wrapper:hover::before{
-            opacity: 1;
-            animation: rotate 4s linear infinite;
+        .service-box:hover::before{
+            width: 100%;
         }
 
-        @keyframes rotate{
-            from{
-                transform: rotate(0deg);
-            }
-            to{
-                transform: rotate(360deg);
-            }
-        }
-
-        .skill-circle-wrapper:hover{
+        .service-box:hover{
+            border-color: #b74b4b;
             transform: translateY(-10px);
-            box-shadow: 0 10px 40px rgba(183, 75, 75, 0.3);
         }
 
-        .circular-progress{
+        .service-box * {
             position: relative;
-            width: 200px;
-            height: 200px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .circular-progress svg{
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            transform: rotate(-90deg);
-        }
-
-        .circular-progress svg circle{
-            width: 100%;
-            height: 100%;
-            fill: none;
-            stroke: #161616;
-            stroke-width: 10;
-            stroke-linecap: round;
-        }
-
-        .circular-progress svg circle:nth-child(2){
-            stroke: #b74b4b;
-            stroke-dasharray: 565;
-            stroke-dashoffset: 565;
-            transition: stroke-dashoffset 2s ease;
-            filter: drop-shadow(0 0 10px #b74b4b);
-        }
-
-        .progress-value{
-            position: relative;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 1rem;
-        }
-
-        .progress-icon{
-            font-size: 4rem;
-            color: #b74b4b;
-            animation: float 3s ease-in-out infinite;
-        }
-
-        @keyframes float{
-            0%, 100%{
-                transform: translateY(0);
-            }
-            50%{
-                transform: translateY(-10px);
-            }
-        }
-
-        .progress-number{
-            font-size: 3rem;
-            font-weight: 700;
-            color: white;
-        }
-
-        .skill-info{
-            text-align: center;
             z-index: 1;
         }
 
-        .skill-info h3{
-            font-size: 2.6rem;
-            font-weight: 600;
-            margin-bottom: 1rem;
-            color: white;
-        }
-
-        .skill-info p{
-            font-size: 1.4rem;
-            color: #999;
-            line-height: 1.6;
-        }
-
-        .skill-badges{
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.8rem;
-            justify-content: center;
-            margin-top: 1.5rem;
-        }
-
-        .badge{
-            padding: 0.5rem 1.2rem;
-            background: rgba(183, 75, 75, 0.1);
-            border: 1px solid rgba(183, 75, 75, 0.3);
-            border-radius: 2rem;
-            font-size: 1.2rem;
+        .service-icon{
+            font-size: 7rem;
             color: #b74b4b;
-            transition: 0.3s ease;
+            margin-bottom: 2rem;
+            transition: 0.4s ease;
         }
 
-        .badge:hover{
-            background: #b74b4b;
+        .service-box:hover .service-icon{
             color: white;
             transform: scale(1.1);
+        }
+
+        .service-box h3{
+            font-size: 2.8rem;
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+            transition: 0.4s ease;
+        }
+
+        .service-box:hover h3{
+            color: white;
+        }
+
+        .service-box p{
+            font-size: 1.6rem;
+            line-height: 1.8;
+            color: #ccc;
+            transition: 0.4s ease;
+        }
+
+        .service-box:hover p{
+            color: white;
+        }
+
+        .service-box .btn{
+            display: inline-block;
+            padding: 1rem 2.8rem;
+            background-color: transparent;
+            border-radius: 4rem;
+            font-size: 1.4rem;
+            color: #b74b4b;
+            letter-spacing: 0.1rem;
+            font-weight: 600;
+            border: 2px solid #b74b4b;
+            transition: 0.3s ease;
+            cursor: pointer;
+            margin-top: 2rem;
+        }
+
+        .service-box:hover .btn{
+            background-color: white;
+            color: #b74b4b;
+            border-color: white;
         }
 
         @media(max-width:995px){
@@ -301,49 +233,30 @@
                 border-bottom: 0.5rem solid #b74b4b;
             }
 
-            .skills h2{
+            .services h2{
                 font-size: 4rem;
             }
 
-            .skills-grid{
+            .services-container{
                 grid-template-columns: 1fr;
-                gap: 3rem;
-            }
-
-            .circular-progress{
-                width: 180px;
-                height: 180px;
-            }
-
-            .progress-icon{
-                font-size: 3.5rem;
             }
         }
 
         @media(max-width: 768px){
-            .skills h2{
+            .services h2{
                 font-size: 3.5rem;
             }
 
-            .skills-subtitle{
-                font-size: 1.5rem;
+            .service-icon{
+                font-size: 5rem;
             }
 
-            .circular-progress{
-                width: 160px;
-                height: 160px;
+            .service-box h3{
+                font-size: 2.4rem;
             }
 
-            .progress-icon{
-                font-size: 3rem;
-            }
-
-            .progress-number{
-                font-size: 2.5rem;
-            }
-
-            .skill-info h3{
-                font-size: 2.2rem;
+            .service-box p{
+                font-size: 1.4rem;
             }
         }
     </style>
@@ -360,104 +273,37 @@
         </nav>
     </header>
 
-    <section class="skills">
-        <h2>My <span>Expertise</span></h2>
-        <p class="skills-subtitle">Mastering the art of digital creation</p>
-        
-        <div class="skills-grid">
-            
-            <div class="skill-circle-wrapper">
-                <div class="circular-progress" data-percent="90">
-                    <svg>
-                        <circle cx="100" cy="100" r="90"></circle>
-                        <circle cx="100" cy="100" r="90" class="progress-circle"></circle>
-                    </svg>
-                    <div class="progress-value">
-                        <i class="fa-solid fa-code progress-icon"></i>
-                        <span class="progress-number">0%</span>
-                    </div>
-                </div>
-                <div class="skill-info">
-                    <h3>Web Development</h3>
-                    <p>Crafting responsive and dynamic web experiences</p>
-                    <div class="skill-badges">
-                        <span class="badge">HTML/CSS</span>
-                        <span class="badge">JavaScript</span>
-                        <span class="badge">React</span>
-                        <span class="badge">Node.js</span>
-                    </div>
-                </div>
+    <section class="Skills">
+        <h2>My <span>Skills</span></h2>
+        <div class="services-container">
+        <div class="service-box"> 
+    <i class="fa-solid fa-video service-icon"></i>
+    <h3>Video Editing</h3>
+    <p>Transform your raw footage into captivating stories. I provide professional video editing services including color grading, transitions, motion graphics, and audio enhancement to bring your vision to life.</p>
+    <a href="https://drive.google.com/drive/folders/1GoCBI_SlsGluHodzOYGf_vY_P7SXNDzk" target="_blank" class="btn">Portfolio</a>
+</div>
+
+
+            <div class="service-box">
+                <i class="fa-solid fa-palette service-icon"></i>
+                <h3>Graphic Design</h3>
+                <p>Create stunning visual identities that resonate with your audience. From logos and branding to social media graphics and print materials, I deliver designs that make an impact.</p>
+                <a href="https://wa.me/923358467477" target="_blank" class="btn">Learn More</a>
             </div>
 
-            <div class="skill-circle-wrapper">
-                <div class="circular-progress" data-percent="85">
-                    <svg>
-                        <circle cx="100" cy="100" r="90"></circle>
-                        <circle cx="100" cy="100" r="90" class="progress-circle"></circle>
-                    </svg>
-                    <div class="progress-value">
-                        <i class="fa-solid fa-pen-nib progress-icon"></i>
-                        <span class="progress-number">0%</span>
-                    </div>
-                </div>
-                <div class="skill-info">
-                    <h3>UI/UX Design</h3>
-                    <p>Creating intuitive and beautiful user interfaces</p>
-                    <div class="skill-badges">
-                        <span class="badge">Figma</span>
-                        <span class="badge">Adobe XD</span>
-                        <span class="badge">Prototyping</span>
-                        <span class="badge">Wireframing</span>
-                    </div>
-                </div>
+            <div class="service-box">
+                <i class="fa-solid fa-pen-nib service-icon"></i>
+                <h3>UI/UX Design</h3>
+                <p>Design intuitive and engaging user experiences that delight your customers. I create user-centered designs through wireframing, prototyping, and user testing to ensure optimal usability.</p>
+                <a href="https://wa.me/923358467477" target="_blank" class="btn">Learn More</a>
             </div>
 
-            <div class="skill-circle-wrapper">
-                <div class="circular-progress" data-percent="88">
-                    <svg>
-                        <circle cx="100" cy="100" r="90"></circle>
-                        <circle cx="100" cy="100" r="90" class="progress-circle"></circle>
-                    </svg>
-                    <div class="progress-value">
-                        <i class="fa-solid fa-palette progress-icon"></i>
-                        <span class="progress-number">0%</span>
-                    </div>
-                </div>
-                <div class="skill-info">
-                    <h3>Graphic Design</h3>
-                    <p>Bringing ideas to life through visual storytelling</p>
-                    <div class="skill-badges">
-                        <span class="badge">Photoshop</span>
-                        <span class="badge">Illustrator</span>
-                        <span class="badge">InDesign</span>
-                        <span class="badge">Canva</span>
-                    </div>
-                </div>
+            <div class="service-box">
+                <i class="fa-solid fa-code service-icon"></i>
+                <h3>Web Development</h3>
+                <p>Build responsive and modern websites that drive results. I specialize in front-end and back-end development, creating fast, secure, and scalable web solutions tailored to your needs.</p>
+                <a href="https://wa.me/923358467477" target="_blank" class="btn">Learn More</a>
             </div>
-
-            <div class="skill-circle-wrapper">
-                <div class="circular-progress" data-percent="82">
-                    <svg>
-                        <circle cx="100" cy="100" r="90"></circle>
-                        <circle cx="100" cy="100" r="90" class="progress-circle"></circle>
-                    </svg>
-                    <div class="progress-value">
-                        <i class="fa-solid fa-video progress-icon"></i>
-                        <span class="progress-number">0%</span>
-                    </div>
-                </div>
-                <div class="skill-info">
-                    <h3>Video Editing</h3>
-                    <p>Transforming footage into compelling narratives</p>
-                    <div class="skill-badges">
-                        <span class="badge">Premiere Pro</span>
-                        <span class="badge">After Effects</span>
-                        <span class="badge">Final Cut</span>
-                        <span class="badge">DaVinci</span>
-                    </div>
-                </div>
-            </div>
-
         </div>
     </section>
 
@@ -469,72 +315,11 @@
             navbar.classList.toggle('active');
         }
 
+        // Close menu when clicking on a link
         document.querySelectorAll('nav a').forEach(link => {
             link.onclick = () => {
                 navbar.classList.remove('active');
             }
-        });
-
-        // Circular progress animation
-        window.addEventListener('load', () => {
-            const circles = document.querySelectorAll('.circular-progress');
-            
-            setTimeout(() => {
-                circles.forEach(circle => {
-                    const percent = circle.getAttribute('data-percent');
-                    const progressCircle = circle.querySelector('.progress-circle');
-                    const progressNumber = circle.querySelector('.progress-number');
-                    const circumference = 2 * Math.PI * 90;
-                    const offset = circumference - (percent / 100) * circumference;
-                    
-                    progressCircle.style.strokeDashoffset = offset;
-                    
-                    // Animate number
-                    let currentPercent = 0;
-                    const interval = setInterval(() => {
-                        if (currentPercent >= percent) {
-                            clearInterval(interval);
-                        } else {
-                            currentPercent++;
-                            progressNumber.textContent = currentPercent + '%';
-                        }
-                    }, 20);
-                });
-            }, 500);
-        });
-
-        // Intersection Observer for scroll animation
-        const observerOptions = {
-            threshold: 0.3
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const circle = entry.target.querySelector('.circular-progress');
-                    const percent = circle.getAttribute('data-percent');
-                    const progressCircle = circle.querySelector('.progress-circle');
-                    const progressNumber = circle.querySelector('.progress-number');
-                    const circumference = 2 * Math.PI * 90;
-                    const offset = circumference - (percent / 100) * circumference;
-                    
-                    progressCircle.style.strokeDashoffset = offset;
-                    
-                    let currentPercent = 0;
-                    const interval = setInterval(() => {
-                        if (currentPercent >= percent) {
-                            clearInterval(interval);
-                        } else {
-                            currentPercent++;
-                            progressNumber.textContent = currentPercent + '%';
-                        }
-                    }, 20);
-                }
-            });
-        }, observerOptions);
-
-        document.querySelectorAll('.skill-circle-wrapper').forEach(wrapper => {
-            observer.observe(wrapper);
         });
     </script>
 </body>

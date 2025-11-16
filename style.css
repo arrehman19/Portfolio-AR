@@ -203,7 +203,7 @@ span{
 .typing-text span::before{
     content: "web Developer";
     color: #b74b4b;
-    animation: words 20s infinite;
+    animation: words 15s infinite;
 }
 
 .typing-text span::after{
@@ -267,3 +267,10 @@ span{
     }
 }
 
+.abd-web{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: medium;
+}
